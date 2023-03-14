@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.Dosc</item>
+
+    </style>
+
+</resources>

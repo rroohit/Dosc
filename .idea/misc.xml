@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_black_white.xml" value="0.1" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_crop.xml" value="0.1" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_delete.xml" value="0.1645" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_dosc_logo_1.xml" value="0.1" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_dot_circle.xml" value="0.186" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_pdf_svg.xml" value="0.117" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_rotate.xml" value="0.1" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_scanner.xml" value="0.1985" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/ic_splash.xml" value="0.254" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/drawable/splash_background.xml" value="0.1" />
+        <entry key="..\:/Users/91997/AndroidStudioProjects/Dosc/app/src/main/res/xml/path_provider.xml" value="0.24791666666666667" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.236" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_black_white.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_crop.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_delete.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_dosc_logo_1.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_dot_circle.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_file_scan.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_horizontal.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_pdf_2.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_pdf_svg.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_rotate.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_scanner.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_scanner_icon.xml" value="0.236" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_square_scanner_icon.xml" value="0.236" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/ic_vertical.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/drawable/splash_background.xml" value="0.1925" />
+        <entry key="..\:/Users/crohi/StudioProjects/Dosc/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.236" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

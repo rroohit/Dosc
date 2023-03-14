@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.itextpdf:pdfa:7.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/pdfa/7.2.1/cd625d17fae9a13d3ef4ef4abe0601ec55e59ebf/pdfa-7.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/pdfa/7.2.1/445ffe92c1dc7988e8c740e5f472116a197d309c/pdfa-7.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/pdfa/7.2.1/123b68595f4d970a7d09ec5b94fa23bc01778970/pdfa-7.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

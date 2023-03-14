@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dosc</string>
+
+    <string name="txt_privacy_policy">Dosc app as a Free app. This SERVICE is provided by Rohit Chavan at no cost and is intended for use as is. This page is used to inform visitors regarding our policies we do not collect any of your Data, Personal information if anyone decided to use our service. If you choose to use my Service. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at Dosc unless otherwise defined in this Privacy Policy.</string>
+    <string name="txt_children_privacy">We do not knowingly collect personally identifiable information from children. We encourage all children to never submit any personally identifiable information through the Application and/or Services. We encourage parents and legal guardians to monitor their children\'s Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to us through the Application and/or Services, please contact us. You must also be at least 16 years of age to consent to the processing of your personally identifiable information in your country (in some countries we may allow your parent or guardian to do so on your behalf).</string>
+    <string name="txt_change_privacy">We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. This policy is effective as of 2022&#8211;11&#8211;09</string>
+    <string name="txt_contact_us">If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at sayro.team@gmail.com.</string>
+
+</resources>
