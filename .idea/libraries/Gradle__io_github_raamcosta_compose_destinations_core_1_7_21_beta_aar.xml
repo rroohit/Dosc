@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: io.github.raamcosta.compose-destinations:core:1.7.21-beta@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/130edac0b2003b20d53f8170a89197a2/transformed/jetified-core-1.7.21-beta/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/130edac0b2003b20d53f8170a89197a2/transformed/jetified-core-1.7.21-beta/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8cf8107f4c82a818750b86efc777fdbe/transformed/jetified-core-1.7.21-beta/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8cf8107f4c82a818750b86efc777fdbe/transformed/jetified-core-1.7.21-beta/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.raamcosta.compose-destinations/core/1.7.21-beta/971d10541fb9e8fb763115afc8c707d9da25e538/core-1.7.21-beta-javadoc.jar!/" />

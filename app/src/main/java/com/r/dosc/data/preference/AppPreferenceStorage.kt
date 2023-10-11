@@ -20,7 +20,6 @@ constructor(
         val SORT_TYPE_ID = intPreferencesKey("pref_sort_id")
         val IS_DARK_THEME = booleanPreferencesKey("pref_dark_theme")
         val IS_START_WITH_FILE_NAME = booleanPreferencesKey("pref_start_with_file_name")
-
     }
 
     override val sortTypeId: Flow<Int>
@@ -34,7 +33,6 @@ constructor(
 
     override suspend fun setSortId(sortId: Int) {
         dataStore.setValue(PreferencesKeys.SORT_TYPE_ID, sortId)
-
     }
 
     override suspend fun setIsDarkTheme(isDarkTheme: Boolean) {
@@ -74,7 +72,6 @@ private fun <T> DataStore<Preferences>.getValueAsFlow(
         }
     }.map { preferences ->
         preferences[key] ?: defaultValue
-
     }
 }
 

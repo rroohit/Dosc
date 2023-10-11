@@ -71,10 +71,10 @@ class HomeViewModel
             )
             list.add(pdfDocumentDetails)
         }
+
         viewModelScope.launch {
             listOfPdfDocuments.emit(list)
         }
-
     }
 
     fun updateDocList() {
@@ -82,7 +82,6 @@ class HomeViewModel
             listOfPdfDocuments.emit(emptyList())
             getAllPdfDocuments()
         }
-
     }
 
     private fun getFileSize(length: Long): String {

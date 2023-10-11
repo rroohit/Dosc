@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.camera:camera-viewfinder:1.4.0-alpha01@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c1e0790af22f866ad92a6af61e830d43/transformed/jetified-camera-viewfinder-1.4.0-alpha01/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c1e0790af22f866ad92a6af61e830d43/transformed/jetified-camera-viewfinder-1.4.0-alpha01/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c1e0790af22f866ad92a6af61e830d43/transformed/jetified-camera-viewfinder-1.4.0-alpha01/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c1e0790af22f866ad92a6af61e830d43/transformed/jetified-camera-viewfinder-1.4.0-alpha01/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.camera/camera-viewfinder/1.4.0-alpha01/6f182ec1307f6b71914a61cfb0ba9ffbff84379b/camera-viewfinder-1.4.0-alpha01-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

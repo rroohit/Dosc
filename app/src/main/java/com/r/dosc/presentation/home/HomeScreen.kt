@@ -112,7 +112,6 @@ fun HomeScreen(
             LaunchedEffect(key1 = true) {
                 writePermissionState.launchPermissionRequest()
             }
-
         }
         else -> Unit
     }

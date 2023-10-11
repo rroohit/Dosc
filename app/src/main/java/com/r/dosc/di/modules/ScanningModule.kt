@@ -91,7 +91,6 @@ class CampImp(private val appContext: Context) : CamX {
                 cameraPr.addListener({
                     cont.resume(cameraPr.get())
                 }, ContextCompat.getMainExecutor(appContext))
-
             }
         }
 }

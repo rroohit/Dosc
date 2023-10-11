@@ -72,7 +72,6 @@ fun ScanningFloatingButton(
                 }
                 else -> Unit
             }
-
         },
     ) {
         Icon(
