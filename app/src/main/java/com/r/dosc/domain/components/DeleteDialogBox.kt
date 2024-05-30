@@ -30,6 +30,7 @@ fun DeleteDialogBox(
                         text = "You are about to delete a document",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
+                        minLines = 1
                     )
                 }
             },

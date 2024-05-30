@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.ui:ui-test-manifest:1.4.0-alpha03@aar">
+  <library name="Gradle: androidx.compose.ui:ui-test-manifest:1.4.0-alpha03@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fd00d1e572c0267929b5dc4291eb0f0b/transformed/jetified-ui-test-manifest-1.4.0-alpha03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fd00d1e572c0267929b5dc4291eb0f0b/transformed/jetified-ui-test-manifest-1.4.0-alpha03/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fd00d1e572c0267929b5dc4291eb0f0b/transformed/jetified-ui-test-manifest-1.4.0-alpha03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b31f7031fcd2b99eb913b9aae2c5eff0/transformed/jetified-ui-test-manifest-1.4.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b31f7031fcd2b99eb913b9aae2c5eff0/transformed/jetified-ui-test-manifest-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b31f7031fcd2b99eb913b9aae2c5eff0/transformed/jetified-ui-test-manifest-1.4.0-alpha03/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

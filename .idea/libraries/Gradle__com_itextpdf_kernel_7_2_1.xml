@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.itextpdf:kernel:7.2.1">
+  <library name="Gradle: com.itextpdf:kernel:7.2.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/kernel/7.2.1/4a11d29fddf2f06ad71ce9d045cf20dc194d0a38/kernel-7.2.1.jar!/" />
     </CLASSES>

@@ -1,330 +1,199 @@
 package com.roh.cropimage
 
 import android.graphics.Bitmap
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.input.pointer.*
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kotlin.math.abs
 
 
 class InItCropView(
     imgBitmap: Bitmap,
 ) : OnCrop {
 
-    private var mBitmap: Bitmap
+    private var mBitmap: Bitmap = imgBitmap
     private lateinit var cropU: CropUtil
-
-    init {
-        mBitmap = imgBitmap
-    }
 
 
     @Composable
     fun ImageCropView(
         modifier: Modifier = Modifier,
         guideLineColor: Color = Color.LightGray,
-        guideLineWidth: Dp = 2.dp,
-        cornerCircleSize: Dp = 8.dp,
+        guideLineWidth: Dp = 1.dp,
+        edgeCircleSize: Dp = 4.dp,
         onDragStart: () -> Unit = { },
-        onCropEdgesChange: (Offset, Offset, Offset, Offset) -> Unit,
+        onCropEdgesChange: (IRect) -> Unit,
+    ) {
 
-        ) {
-
-        var selectedCircle by remember { mutableStateOf(SelectedCircle.NULL) }
         val cropUtil by remember { mutableStateOf(CropUtil(mBitmap)) }
-
         cropU = cropUtil
-
-        val circleTouchArea = 120f
 
         Canvas(
             modifier = modifier
-                .onSizeChanged {
-                    cropUtil.updateBitmapSizeChange(it.width, it.height)
+                .onSizeChanged { intSize ->
+                    cropUtil.onCanvasSizeChanged(intSize = intSize)
                 }
                 .pointerInput(Unit) {
                     detectDragGestures(
-                        onDragStart = {
+                        onDragStart = { touchPoint ->
                             onDragStart()
-                            if (it.x - cropUtil.circleOne.x < circleTouchArea &&
-                                it.x - cropUtil.circleOne.x > -circleTouchArea &&
-                                it.y - cropUtil.circleOne.y < circleTouchArea &&
-                                it.y - cropUtil.circleOne.y > -circleTouchArea
-                            ) {
-
-                                selectedCircle = SelectedCircle.ONE
-
-                            } else if (it.x - cropUtil.circleTwo.x < circleTouchArea &&
-                                it.x - cropUtil.circleTwo.x > -circleTouchArea &&
-                                it.y - cropUtil.circleTwo.y < circleTouchArea &&
-                                it.y - cropUtil.circleTwo.y > -circleTouchArea
-                            ) {
-
-                                selectedCircle = SelectedCircle.TWO
-
-                            } else if (it.x - cropUtil.circleThree.x < circleTouchArea &&
-                                it.x - cropUtil.circleThree.x > -circleTouchArea &&
-                                it.y - cropUtil.circleThree.y < circleTouchArea &&
-                                it.y - cropUtil.circleThree.y > -circleTouchArea
-                            ) {
-
-                                selectedCircle = SelectedCircle.THREE
-
-                            } else if (it.x - cropUtil.circleFour.x < circleTouchArea &&
-                                it.x - cropUtil.circleFour.x > -circleTouchArea &&
-                                it.y - cropUtil.circleFour.y < circleTouchArea &&
-                                it.y - cropUtil.circleFour.y > -circleTouchArea
-                            ) {
-                                selectedCircle = SelectedCircle.FOUR
-
-                            } else if (abs(it.y - cropUtil.circleOne.y) < circleTouchArea) {
-
-                                selectedCircle = SelectedCircle.LINEONE
-
-                            } else if (abs(it.x - cropUtil.circleOne.x) < circleTouchArea) {
-
-                                selectedCircle = SelectedCircle.LINETWO
-
-                            } else if (abs(it.x - cropUtil.circleTwo.x) < circleTouchArea) {
-
-                                selectedCircle = SelectedCircle.LINETHREE
-
-                            } else if (abs(it.y - cropUtil.circleThree.y) < circleTouchArea) {
-
-                                selectedCircle = SelectedCircle.LINEFOUR
-
-                            } else {
-                                selectedCircle = SelectedCircle.NULL
-                            }
+                            cropUtil.onDragStart(touchPoint)
                         },
-                        onDrag = { change, _ ->
-                            change.consume()
-                            if (change.position.x < size.width && change.position.x > 0f
-                                && change.position.y < size.height && change.position.y > 0f
-                            ) {
-                                when (selectedCircle) {
-                                    SelectedCircle.ONE -> {
-                                        val offsetChanged =
-                                            Offset(change.position.x, change.position.y)
-                                        cropUtil.updateCircleOne(offsetChanged)
-
-
-                                    }
-                                    SelectedCircle.TWO -> {
-                                        val offsetChanged =
-                                            Offset(change.position.x, change.position.y)
-                                        cropUtil.updateCircleTwo(offsetChanged)
-
-
-                                    }
-                                    SelectedCircle.THREE -> {
-                                        val offsetChanged =
-                                            Offset(change.position.x, change.position.y)
-                                        cropUtil.updateCircleThree(offsetChanged)
-
-                                    }
-                                    SelectedCircle.FOUR -> {
-                                        val offsetChanged =
-                                            Offset(change.position.x, change.position.y)
-                                        cropUtil.updateCircleFour(offsetChanged)
-
-
-                                    }
-                                    SelectedCircle.LINEONE -> {
-                                        cropUtil.moveLineOne(
-                                            Offset(
-                                                change.position.x,
-                                                change.position.y
-                                            )
-                                        )
-                                    }
-                                    SelectedCircle.LINETWO -> {
-                                        cropUtil.moveLineTwo(
-                                            Offset(
-                                                change.position.x,
-                                                change.position.y
-                                            )
-                                        )
-                                    }
-                                    SelectedCircle.LINETHREE -> {
-                                        cropUtil.moveLineThree(
-                                            Offset(
-                                                change.position.x,
-                                                change.position.y
-                                            )
-                                        )
-                                    }
-                                    SelectedCircle.LINEFOUR -> {
-                                        cropUtil.moveLineFour(
-                                            Offset(
-                                                change.position.x,
-                                                change.position.y
-                                            )
-                                        )
-                                    }
-                                    else -> Unit
-                                }
-
-                            } else {
-                                selectedCircle = SelectedCircle.NULL
-                            }
-
+                        onDrag = { pointerInputChange, _ ->
+                            // consume the drag points and update the rect
+                            pointerInputChange.consume()
+                            val dragPoint = pointerInputChange.position
+                            cropUtil.onDrag(dragPoint)
+                            /*if (cropUtil.rectEdgeTouched != RectEdge.NULL) {
+                                onCropEdgesChange(cropUtil.iRect)
+                            }*/
                         },
                         onDragEnd = {
-                            onCropEdgesChange(
-                                cropUtil.circleOne,
-                                cropUtil.circleTwo,
-                                cropUtil.circleThree,
-                                cropUtil.circleFour,
-                            )
-                            selectedCircle = SelectedCircle.NULL
+                            onCropEdgesChange(cropUtil.iRect)
+                            cropUtil.onDragEnd()
                         }
                     )
                 },
             onDraw = {
+                // Draw or Show image on rect
                 val bm =
                     Bitmap.createScaledBitmap(
                         mBitmap,
-                        cropUtil.canvasWidth,
-                        cropUtil.canvasHeight,
+                        cropUtil.canvasSize.canvasWidth.toInt(),
+                        cropUtil.canvasSize.canvasHeight.toInt(),
                         false
                     )
-
-
-                //Cropping Image
                 drawImage(image = bm.asImageBitmap())
 
-                //Corner circles
-                //1
-                drawCircle(
+                // Actual rect
+                drawRect(
                     color = guideLineColor,
-                    center = cropUtil.circleOne,
-                    radius = cornerCircleSize.toPx()
-                )
-                //2
-                drawCircle(
-                    color = guideLineColor,
-                    center = cropUtil.circleTwo,
-                    radius = cornerCircleSize.toPx()
-                )
-                //3
-                drawCircle(
-                    color = guideLineColor,
-                    center = cropUtil.circleThree,
-                    radius = cornerCircleSize.toPx()
-                )
-                //4
-                drawCircle(
-                    color = guideLineColor,
-                    center = cropUtil.circleFour,
-                    radius = cornerCircleSize.toPx()
+                    size = cropU.iRect.size,
+                    topLeft = cropU.iRect.topLeft,
+                    style = Stroke(guideLineWidth.toPx()),
                 )
 
+                // Vertical lines
+                val verticalDiff = cropU.iRect.size.height / 3
+                drawLine(
+                    color = guideLineColor,
+                    start = Offset(
+                        cropU.iRect.topLeft.x,
+                        (cropU.iRect.topLeft.y + verticalDiff)
+                    ),
+                    end = Offset(
+                        (cropU.iRect.topLeft.x + cropU.iRect.size.width),
+                        (cropU.iRect.topLeft.y + verticalDiff)
+                    ),
+                    strokeWidth = guideLineWidth.toPx(),
+                )
+                drawLine(
+                    color = guideLineColor,
+                    start = Offset(
+                        cropU.iRect.topLeft.x,
+                        (cropU.iRect.topLeft.y + (verticalDiff * 2))
+                    ),
+                    end = Offset(
+                        (cropU.iRect.topLeft.x + cropU.iRect.size.width),
+                        (cropU.iRect.topLeft.y + (verticalDiff * 2))
+                    ),
+                    strokeWidth = guideLineWidth.toPx(),
+                )
 
-                val path = Path().apply {
+                // Horizontal lines
+                val horizontalDiff = cropU.iRect.size.width / 3
+                drawLine(
+                    color = guideLineColor,
+                    start = Offset(
+                        (cropU.iRect.topLeft.x + horizontalDiff),
+                        cropU.iRect.topLeft.y
+                    ),
+                    end = Offset(
+                        (cropU.iRect.topLeft.x + horizontalDiff),
+                        (cropU.iRect.topLeft.y + cropU.iRect.size.height)
+                    ),
+                    strokeWidth = guideLineWidth.toPx(),
+                )
 
-                    //Image outlines/guidelines
-                    //1
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.circleOne,
-                        end = cropUtil.circleTwo,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
-                    //2
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.circleOne,
-                        end = cropUtil.circleThree,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
-                    //3
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.circleTwo,
-                        end = cropUtil.circleFour,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
-                    //4
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.circleThree,
-                        end = cropUtil.circleFour,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
+                drawLine(
+                    color = guideLineColor,
+                    start = Offset(
+                        (cropU.iRect.topLeft.x + (horizontalDiff * 2)),
+                        cropU.iRect.topLeft.y
+                    ),
+                    end = Offset(
+                        (cropU.iRect.topLeft.x + (horizontalDiff * 2)),
+                        (cropU.iRect.topLeft.y + cropU.iRect.size.height)
+                    ),
+                    strokeWidth = guideLineWidth.toPx(),
+                )
 
-                    //guide centre lines
-                    //line 1
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.guideLineOne.start,
-                        end = cropUtil.guideLineOne.end,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
+                // Rect edges
+                // edge 1
+                drawCircle(
+                    color = guideLineColor,
+                    center = cropU.iRect.topLeft,
+                    radius = edgeCircleSize.toPx()
+                )
 
-                    //line 2
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.guideLineTwo.start,
-                        end = cropUtil.guideLineTwo.end,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
+                // edge 2
+                drawCircle(
+                    color = guideLineColor,
+                    center = Offset(
+                        (cropU.iRect.topLeft.x + cropU.iRect.size.width),
+                        cropU.iRect.topLeft.y
+                    ),
+                    radius = edgeCircleSize.toPx()
+                )
 
-                    //line 3
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.guideLineThree.start,
-                        end = cropUtil.guideLineThree.end,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
 
-                    //line 4
-                    drawLine(
-                        color = guideLineColor,
-                        start = cropUtil.guideLineFour.start,
-                        end = cropUtil.guideLineFour.end,
-                        strokeWidth = guideLineWidth.toPx()
-                    )
+                // edge 3
+                drawCircle(
+                    color = guideLineColor,
+                    center = Offset(
+                        cropU.iRect.topLeft.x,
+                        (cropU.iRect.topLeft.y + cropU.iRect.size.height)
+                    ),
+                    radius = edgeCircleSize.toPx()
+                )
 
-                }
-                drawPath(path, guideLineColor)
-
+                // edge 4
+                drawCircle(
+                    color = guideLineColor,
+                    center = Offset(
+                        (cropU.iRect.topLeft.x + cropU.iRect.size.width),
+                        (cropU.iRect.topLeft.y + cropU.iRect.size.height)
+                    ),
+                    radius = edgeCircleSize.toPx()
+                )
             }
         )
     }
 
-
     override fun resetView() {
-        cropU.resetCropView()
+        cropU.resetCropIRect()
     }
 
-    override fun updateCropPoints(
-        circleOne: Offset,
-        circleTwo: Offset,
-        circleThree: Offset,
-        circleFour: Offset
-    ) {
-        cropU.updateCropEdges(circleOne, circleTwo, circleThree, circleFour)
 
+    override fun updateCropRect(iRect: IRect) {
+        cropU.updateOldRectSize(iRect)
     }
 
 }
 
 interface OnCrop {
     fun resetView()
-    fun updateCropPoints(
-        circleOne: Offset,
-        circleTwo: Offset,
-        circleThree: Offset,
-        circleFour: Offset
-    )
+    fun updateCropRect(iRect: IRect)
 }

@@ -3,6 +3,7 @@ package com.r.dosc.presentation.home
 import android.Manifest
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -13,6 +14,7 @@ import com.google.accompanist.permissions.rememberPermissionState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.r.dosc.domain.components.DeleteDialogBox
 import com.r.dosc.domain.components.ReadDirectory
+import com.r.dosc.domain.components.RenamePdfDialogBox
 import com.r.dosc.domain.components.SetUpStatusBar
 import com.r.dosc.domain.constants.Permissions
 import com.r.dosc.domain.util.PermissionViewModel
@@ -20,6 +22,7 @@ import com.r.dosc.domain.util.getPdfUri
 import com.r.dosc.presentation.destinations.PdfDocViewerDestination
 import com.r.dosc.presentation.home.components.OnEmptyState
 import com.r.dosc.presentation.home.components.ShowPdfList
+import com.r.dosc.presentation.main.MainScreenEvents
 import com.r.dosc.presentation.main.MainViewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
@@ -89,17 +92,32 @@ fun HomeScreen(
                         DeleteDialogBox(
                             onDelete = {
                                 homeViewModel.deleteDocument(pdfDoc)
-
                             },
-                            onDismissRequest = {
-
-                            }
+                            onDismissRequest = {}
                         )
                     },
                     onSorIdSelected = { id ->
                         homeViewModel.updateSortType(id)
+                    },
+                    onRename = { pdfFileDetails ->
+                        RenamePdfDialogBox(
+                            mainViewModel
+                        ) { newFilename ->
+                            if (newFilename.isEmpty()) {
+                                mainViewModel.onEvent(MainScreenEvents.ShowSnackBar("Enter Valid Name"))
+                            } else {
+                                // Rename the current file
+                                homeViewModel.renameThePdfFile(
+                                    pdfDoc = pdfFileDetails,
+                                    newFileName = newFilename,
+                                    onSuccess = {},
+                                    onError = {
+                                        mainViewModel.onEvent(MainScreenEvents.ShowSnackBar("Failed to rename try later.."))
+                                    }
+                                )
+                            }
+                        }
                     }
-
                 )
             } else {
                 OnEmptyState()
@@ -113,6 +131,7 @@ fun HomeScreen(
                 writePermissionState.launchPermissionRequest()
             }
         }
+
         else -> Unit
     }
 }

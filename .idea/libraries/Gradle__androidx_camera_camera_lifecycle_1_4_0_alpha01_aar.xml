@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.camera:camera-lifecycle:1.4.0-alpha01@aar">
+  <library name="Gradle: androidx.camera:camera-lifecycle:1.4.0-alpha01@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/118e9495bac2ff6fea7b03276a2c9bc0/transformed/jetified-camera-lifecycle-1.4.0-alpha01/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/118e9495bac2ff6fea7b03276a2c9bc0/transformed/jetified-camera-lifecycle-1.4.0-alpha01/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/118e9495bac2ff6fea7b03276a2c9bc0/transformed/jetified-camera-lifecycle-1.4.0-alpha01/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2ce9f79944c2623e9968e3be047524e6/transformed/jetified-camera-lifecycle-1.4.0-alpha01/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2ce9f79944c2623e9968e3be047524e6/transformed/jetified-camera-lifecycle-1.4.0-alpha01/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2ce9f79944c2623e9968e3be047524e6/transformed/jetified-camera-lifecycle-1.4.0-alpha01/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

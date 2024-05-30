@@ -103,6 +103,7 @@ fun ScanningCameraScreen(
                         isSelected = true
 
                     }
+
                     else -> {
                         isSelected = false
                     }
@@ -136,7 +137,7 @@ fun ScanningCameraScreen(
     }
 
     BackHandler {
-        if (scanningViewModel.isDocumentPreviewMode.value){
+        if (scanningViewModel.isDocumentPreviewMode.value) {
             scanningViewModel.onEvent(ScanningScreenEvents.CameraScreen)
 
         } else if (scanningViewModel.listOfImages.isNotEmpty()) {
@@ -235,19 +236,18 @@ fun ScanningCameraScreen(
                             CropImageView(
                                 bitmap = scanningViewModel.bitmapImage.collectAsState().value,
                                 imageEditDetails = scanningViewModel.imageEditDetails.collectAsState().value,
-                                onCropEdgesChange = { offset1, offset2, offset3, offset4 ->
-
+                                onCropEdgesChange = { iRect ->
                                     scanningViewModel.updateImageCropBound(
-                                        indexSelectedImage.value,
-                                        offset1,
-                                        offset2,
-                                        offset3,
-                                        offset4
+                                        index = indexSelectedImage.value,
+                                        iRect = iRect
                                     )
                                 },
                                 indexSelectedImage = indexSelectedImage.value,
-                                cropRectSize = {intSize ->
-                                    scanningViewModel.updateCropRectSize(intSize.width, intSize.height)
+                                cropRectSize = { intSize ->
+                                    scanningViewModel.updateCropRectSize(
+                                        intSize.width,
+                                        intSize.height
+                                    )
                                 }
                             )
                         }

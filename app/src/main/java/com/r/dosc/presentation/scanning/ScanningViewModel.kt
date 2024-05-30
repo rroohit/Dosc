@@ -6,6 +6,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -23,6 +24,7 @@ import com.r.dosc.di.modules.CamX
 import com.r.dosc.domain.models.ImageEditDetails
 import com.r.dosc.domain.util.DocumentEssential
 import com.roh.cropimage.CropUtil
+import com.roh.cropimage.IRect
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -51,15 +53,17 @@ class ScanningViewModel
     val listOfImages = mutableStateListOf<Uri>()
     private val listOfImageBitmaps = arrayListOf<ImageEditDetails>()
 
-    private var canvasWidth: Int by mutableStateOf(0)
-    private var canvasHeight: Int by mutableStateOf(0)
+    private var canvasWidth: Int by mutableIntStateOf(0)
+    private var canvasHeight: Int by mutableIntStateOf(0)
 
     private val _uiEvent = MutableStateFlow<ScanningScreenEvents>(ScanningScreenEvents.CameraScreen)
     val uiEvent = _uiEvent
 
     val closeScanningScreen = MutableStateFlow(false)
     val bitmapImage = MutableStateFlow<Bitmap?>(null)
+
     val imageEditDetails = MutableStateFlow<ImageEditDetails?>(null)
+
     val showDialog = MutableStateFlow(false)
     val captureImage = MutableStateFlow(false)
     val isScanningMode = MutableStateFlow(true)
@@ -90,6 +94,7 @@ class ScanningViewModel
                     _uiEvent.emit(events)
                 }
             }
+
             ScanningScreenEvents.CameraScreen -> {
                 bitmapImage.value = null
                 imageEditDetails.value = null
@@ -101,6 +106,7 @@ class ScanningViewModel
                 }
 
             }
+
             is ScanningScreenEvents.RemoveImage -> {
                 bitmapImage.value = null
                 imageEditDetails.value = null
@@ -111,6 +117,7 @@ class ScanningViewModel
                 }
 
             }
+
             is ScanningScreenEvents.SavePdf -> {
                 bitmapImage.value = null
                 imageEditDetails.value = null
@@ -126,9 +133,8 @@ class ScanningViewModel
         documentEssential.pdfWriter(iDocument, getFileName())
         iDocument.open()
 
-        var count = 0
         viewModelScope.launch {
-
+            var count = 0
             val creatingPdf = async {
                 listOfImageBitmaps.forEachIndexed { _, imFile ->
                     count++
@@ -163,10 +169,9 @@ class ScanningViewModel
 
             }
             creatingPdf.await()
-            delay(3000L)
+            delay(2000L)
             showDialog.value = false
             closeScanningScreen.emit(true)
-
         }
 
     }
@@ -175,19 +180,15 @@ class ScanningViewModel
     fun addImage(uri: Uri) {
         viewModelScope.launch {
             listOfImages.add(uri)
-            val indx = listOfImageBitmaps.lastIndex + 1
+            val currImageIndex = listOfImageBitmaps.lastIndex + 1
             val imgEditDetails = ImageEditDetails(
-                index = indx,
-                circleOne = Offset(0.0f, 0.0f),
-                circleTwo = Offset(0.0f, 0.0f),
-                circleThree = Offset(0.0f, 0.0f),
-                circleFour = Offset(0.0f, 0.0f),
+                index = currImageIndex,
                 imgUri = uri,
-                isEdited = false
+                isEdited = false,
+                iRect = IRect()
             )
 
             listOfImageBitmaps.add(imgEditDetails)
-
             scrollIndex.emit(listOfImageBitmaps.size)
         }
     }
@@ -222,9 +223,11 @@ class ScanningViewModel
     }.pdf" else "$mainDirectory/${getDefaultName()}.pdf"
 
     private fun checkFileExist(fileName: String, count: Int): String {
-
-        val file =
-            if (count > 0) File("$mainDirectory/$fileName($count).pdf") else File("$mainDirectory/$fileName.pdf")
+        val file = if (count > 0) {
+            File("$mainDirectory/$fileName($count).pdf")
+        } else {
+            File("$mainDirectory/$fileName.pdf")
+        }
 
         return if (!file.exists()) {
             if (count > 0) {
@@ -236,7 +239,6 @@ class ScanningViewModel
         } else {
             checkFileExist(fileName, count + 1)
         }
-
     }
 
     private fun getDefaultName(): String {
@@ -269,14 +271,7 @@ class ScanningViewModel
             val bitmap = (result as BitmapDrawable).bitmap
 
             val cropUtil = CropUtil(bitmap).apply {
-
-                updateCropEdges(
-                    imageEditDetails.circleOne,
-                    imageEditDetails.circleTwo,
-                    imageEditDetails.circleThree,
-                    imageEditDetails.circleFour
-                )
-
+                updateOldRectSize(imageEditDetails.iRect)
             }
 
             val newBitmap = cropUtil.cropImage(canvasWidth, canvasHeight)
@@ -302,23 +297,15 @@ class ScanningViewModel
 
     fun updateImageCropBound(
         index: Int,
-        offset1: Offset,
-        offset2: Offset,
-        offset3: Offset,
-        offset4: Offset
+        iRect: IRect
     ) {
         viewModelScope.launch {
-            val imgD = listOfImageBitmaps[index].copy(
-                circleOne = offset1,
-                circleTwo = offset2,
-                circleThree = offset3,
-                circleFour = offset4,
-                isEdited = true
+            val newImageEditDetails = listOfImageBitmaps[index].copy(
+                isEdited = true,
+                iRect = iRect
             )
-            listOfImageBitmaps[index] = (imgD)
-
+            listOfImageBitmaps[index] = (newImageEditDetails)
         }
-
     }
 
     fun updateCropRectSize(width: Int, height: Int) {

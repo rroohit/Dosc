@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.foundation:foundation-layout:1.4.0-alpha03@aar">
+  <library name="Gradle: androidx.compose.foundation:foundation-layout:1.4.0-alpha03@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/578a1fd710e108985fb78c13ea68e10e/transformed/jetified-foundation-layout-1.4.0-alpha03/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/578a1fd710e108985fb78c13ea68e10e/transformed/jetified-foundation-layout-1.4.0-alpha03/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/578a1fd710e108985fb78c13ea68e10e/transformed/jetified-foundation-layout-1.4.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/574ba50771461de754bcb7471b74065e/transformed/jetified-foundation-layout-1.4.0-alpha03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/574ba50771461de754bcb7471b74065e/transformed/jetified-foundation-layout-1.4.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/574ba50771461de754bcb7471b74065e/transformed/jetified-foundation-layout-1.4.0-alpha03/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

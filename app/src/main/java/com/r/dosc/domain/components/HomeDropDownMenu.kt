@@ -9,15 +9,17 @@ import com.r.dosc.domain.models.HomeItemDropDownList
 
 val itemList = listOf(
     HomeItemDropDownList.Share(),
+    HomeItemDropDownList.Rename(),
     HomeItemDropDownList.Delete(),
 )
 
 @Composable
 fun DropDownMenu(
-    onDeleteCheck:Boolean,
+    onDeleteCheck: Boolean,
     modifier: Modifier,
     onDismissRequest: () -> Unit,
     onShare: () -> Unit,
+    onRename: @Composable () -> Unit,
     onDelete: @Composable (HomeItemDropDownList) -> Unit,
 ) {
     var isExpanded by remember {
@@ -26,6 +28,10 @@ fun DropDownMenu(
 
     var onDeleteClicked by remember {
         mutableStateOf(onDeleteCheck)
+    }
+
+    var onRenameClicked by remember {
+        mutableStateOf(false)
     }
 
     DropdownMenu(
@@ -44,10 +50,13 @@ fun DropDownMenu(
                         is HomeItemDropDownList.Share -> {
                             onShare()
                             isExpanded = false
-
                             onDismissRequest()
-
                         }
+
+                        is HomeItemDropDownList.Rename -> {
+                            onRenameClicked = true
+                        }
+
                         is HomeItemDropDownList.Delete -> {
                             onDeleteClicked = true
                         }
@@ -56,15 +65,18 @@ fun DropDownMenu(
             ) {
                 Text(text = item.name)
             }
-
         }
-
     }
 
     if (onDeleteClicked) {
         onDelete(HomeItemDropDownList.Delete())
         isExpanded = false
 
+    }
+
+    if (onRenameClicked) {
+        onRename()
+        isExpanded = false
     }
 
 }

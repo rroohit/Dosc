@@ -13,7 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Remove
+import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -47,7 +47,6 @@ fun ImagePreviewItem(
         contentAlignment = Alignment.Center
     ) {
 
-
         AsyncImage(
             modifier = Modifier
                 .fillMaxSize()
@@ -64,14 +63,15 @@ fun ImagePreviewItem(
 
         Icon(
             modifier = Modifier
-                .size(13.dp)
+                .size(14.dp)
                 .offset(x = 26.dp, y = (-27).dp)
                 .clip(RoundedCornerShape(100))
                 .background(GrayShade_dark)
                 .clickable {
                     removeImage(count - 1)
-                },
-            imageVector = Icons.Rounded.Remove,
+                }
+                .padding(2.dp),
+            imageVector = Icons.Rounded.Delete,
             contentDescription = "delete",
             tint = White_Shade
         )

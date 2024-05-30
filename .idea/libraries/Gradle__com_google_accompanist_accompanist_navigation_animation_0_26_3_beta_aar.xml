@@ -1,8 +1,8 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.accompanist:accompanist-navigation-animation:0.26.3-beta@aar">
+  <library name="Gradle: com.google.accompanist:accompanist-navigation-animation:0.26.3-beta@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/193d955fc28fc2db7d30de53d9cb7d18/transformed/jetified-accompanist-navigation-animation-0.26.3-beta/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/193d955fc28fc2db7d30de53d9cb7d18/transformed/jetified-accompanist-navigation-animation-0.26.3-beta/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6be2bf63d154ca5c2ac1a92a61592462/transformed/jetified-accompanist-navigation-animation-0.26.3-beta/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6be2bf63d154ca5c2ac1a92a61592462/transformed/jetified-accompanist-navigation-animation-0.26.3-beta/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-navigation-animation/0.26.3-beta/86f4090801757258bb6b487980762f88fbae02e2/accompanist-navigation-animation-0.26.3-beta-javadoc.jar!/" />

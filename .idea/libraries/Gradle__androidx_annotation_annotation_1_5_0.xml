@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.annotation:annotation:1.5.0">
+  <library name="Gradle: androidx.annotation:annotation:1.5.0" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.5.0/857678d6b4ca7b28571ef7935c668bdb57e15027/annotation-1.5.0.jar!/" />
     </CLASSES>

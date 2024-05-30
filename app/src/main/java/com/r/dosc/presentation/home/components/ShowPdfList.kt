@@ -17,6 +17,7 @@ fun ShowPdfList(
     listOfPdfs: List<PdfDocumentDetails>,
     openDocument: (PdfDocumentDetails, Int) -> Unit,
     onShare: (File) -> Unit,
+    onRename: @Composable (PdfDocumentDetails) -> Unit,
     onDelete: @Composable (PdfDocumentDetails) -> Unit,
     onSorIdSelected: (Int) -> Unit
 ) {
@@ -41,6 +42,9 @@ fun ShowPdfList(
                         },
                         onShare = { file ->
                             onShare(file)
+                        },
+                        onRename = { pdfFile ->
+                            onRename(pdfFile)
                         },
                         openDocument = { doc ->
                             openDocument(doc, index)

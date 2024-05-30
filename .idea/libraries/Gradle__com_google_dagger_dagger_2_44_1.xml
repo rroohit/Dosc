@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.dagger:dagger:2.44.1">
+  <library name="Gradle: com.google.dagger:dagger:2.44.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.44.1/a967488b27f2d31fb2fea49009371922598ca17e/dagger-2.44.1.jar!/" />
     </CLASSES>

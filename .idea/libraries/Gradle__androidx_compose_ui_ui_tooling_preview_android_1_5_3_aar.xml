@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.ui:ui-tooling-preview-android:1.5.3@aar">
+  <library name="Gradle: androidx.compose.ui:ui-tooling-preview-android:1.5.3@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/82bd947cfa9b3c8cb4489c1a8084214c/transformed/jetified-ui-tooling-preview-release/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/82bd947cfa9b3c8cb4489c1a8084214c/transformed/jetified-ui-tooling-preview-release/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/82bd947cfa9b3c8cb4489c1a8084214c/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/337be677b588c04a7ab308a9f5a15f4f/transformed/jetified-ui-tooling-preview-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/337be677b588c04a7ab308a9f5a15f4f/transformed/jetified-ui-tooling-preview-release/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/337be677b588c04a7ab308a9f5a15f4f/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

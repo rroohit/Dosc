@@ -3,8 +3,8 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="8.1.2" />
-        <option name="LAST_KNOWN_AGP_VERSION" value="8.1.2" />
+        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="8.2.2" />
+        <option name="LAST_KNOWN_AGP_VERSION" value="8.2.2" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -18,11 +18,6 @@
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
-  </component>
-  <component name="ModuleClassLoaderOverlays">
-    <paths>
-      <option value="/var/folders/yj/7s_rdpy157n7764317n7rkth0000gn/T/overlay5477662776146416360" />
-    </paths>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <exclude-output />

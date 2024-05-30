@@ -5,11 +5,15 @@ import androidx.lifecycle.viewModelScope
 import com.r.dosc.data.preference.PreferenceStorage
 import com.r.dosc.domain.models.PdfDocumentDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.io.File
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -55,6 +59,31 @@ class HomeViewModel
         val file = File("${pdfDoc.filePath}")
         file.deleteRecursively()
         updateDocList()
+    }
+
+    fun renameThePdfFile(
+        pdfDoc: PdfDocumentDetails,
+        newFileName: String,
+        onError: () -> Unit,
+        onSuccess: () -> Unit,
+    ) {
+        val oldFile = pdfDoc.file
+
+        if (!oldFile.exists()) {
+            // File not exist
+            onError()
+            return
+        }
+
+        val newFile = File(oldFile.parent, newFileName)
+        val success = oldFile.renameTo(newFile)
+
+        if (success) {
+            updateDocList()
+            onSuccess()
+        } else {
+            onError()
+        }
     }
 
     private fun getAllPdfDocuments() {

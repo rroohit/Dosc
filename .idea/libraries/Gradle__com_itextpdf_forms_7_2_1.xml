@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.itextpdf:forms:7.2.1">
+  <library name="Gradle: com.itextpdf:forms:7.2.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/forms/7.2.1/3cb4f3ef8dd3bab554b51fd022a479ecc42dcf0a/forms-7.2.1.jar!/" />
     </CLASSES>

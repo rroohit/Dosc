@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.collection:collection:1.2.0">
+  <library name="Gradle: androidx.collection:collection:1.2.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="androidx.collection" artifactId="collection" version="1.2.0" />
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.2.0/34dbc21d203cc4d4d623ac572a21acd4ccd716af/collection-1.2.0.jar!/" />
     </CLASSES>

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.itextpdf:svg:7.2.1">
+  <library name="Gradle: com.itextpdf:svg:7.2.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/svg/7.2.1/dd85b5ba2aeb7c3336fe2c7af15f0373be778bac/svg-7.2.1.jar!/" />
     </CLASSES>

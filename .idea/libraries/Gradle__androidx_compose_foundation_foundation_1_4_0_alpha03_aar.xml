@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.foundation:foundation:1.4.0-alpha03@aar">
+  <library name="Gradle: androidx.compose.foundation:foundation:1.4.0-alpha03@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/84aa8704d9b02a43eba5f27b5953a394/transformed/jetified-foundation-1.4.0-alpha03/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/84aa8704d9b02a43eba5f27b5953a394/transformed/jetified-foundation-1.4.0-alpha03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/84aa8704d9b02a43eba5f27b5953a394/transformed/jetified-foundation-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7fceccec0cfbda2ea1d58931874a1aa3/transformed/jetified-foundation-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7fceccec0cfbda2ea1d58931874a1aa3/transformed/jetified-foundation-1.4.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7fceccec0cfbda2ea1d58931874a1aa3/transformed/jetified-foundation-1.4.0-alpha03/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

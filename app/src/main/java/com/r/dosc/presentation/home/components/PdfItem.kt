@@ -26,6 +26,7 @@ fun PdfItem(
     pdfDocumentDetails: PdfDocumentDetails,
     onDelete: @Composable (PdfDocumentDetails) -> Unit,
     onShare: (File) -> Unit,
+    onRename: @Composable (PdfDocumentDetails) -> Unit,
     openDocument: (PdfDocumentDetails) -> Unit
 ) {
 
@@ -86,6 +87,7 @@ fun PdfItem(
                     showDropDown = !showDropDown
                 }
             ) {
+                // More vert icon for share, rename, delete option drop down
                 Icon(
                     modifier = Modifier.size(25.dp),
                     imageVector = Icons.Default.MoreVert,
@@ -98,7 +100,9 @@ fun PdfItem(
                         modifier = Modifier,
                         onShare = {
                             onShare(pdfDocumentDetails.file)
-
+                        },
+                        onRename = {
+                            onRename(pdfDocumentDetails)
                         },
                         onDelete = {
                             onDelete(pdfDocumentDetails)

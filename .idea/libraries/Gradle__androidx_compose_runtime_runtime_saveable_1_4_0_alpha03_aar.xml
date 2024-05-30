@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.runtime:runtime-saveable:1.4.0-alpha03@aar">
+  <library name="Gradle: androidx.compose.runtime:runtime-saveable:1.4.0-alpha03@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/137288bf93932765fc90871bd57e4a6f/transformed/jetified-runtime-saveable-1.4.0-alpha03/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/137288bf93932765fc90871bd57e4a6f/transformed/jetified-runtime-saveable-1.4.0-alpha03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/137288bf93932765fc90871bd57e4a6f/transformed/jetified-runtime-saveable-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/65c87d83ff96c39d8c6bb594d6144495/transformed/jetified-runtime-saveable-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/65c87d83ff96c39d8c6bb594d6144495/transformed/jetified-runtime-saveable-1.4.0-alpha03/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/65c87d83ff96c39d8c6bb594d6144495/transformed/jetified-runtime-saveable-1.4.0-alpha03/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

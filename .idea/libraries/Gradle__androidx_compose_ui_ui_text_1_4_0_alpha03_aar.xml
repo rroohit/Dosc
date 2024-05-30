@@ -1,9 +1,9 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.compose.ui:ui-text:1.4.0-alpha03@aar">
+  <library name="Gradle: androidx.compose.ui:ui-text:1.4.0-alpha03@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4693ec1eef7bd76d3cf945a589288e9/transformed/jetified-ui-text-1.4.0-alpha03/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b4693ec1eef7bd76d3cf945a589288e9/transformed/jetified-ui-text-1.4.0-alpha03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4693ec1eef7bd76d3cf945a589288e9/transformed/jetified-ui-text-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5b4c4ebf73380ca50e2a33960e58064e/transformed/jetified-ui-text-1.4.0-alpha03/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5b4c4ebf73380ca50e2a33960e58064e/transformed/jetified-ui-text-1.4.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5b4c4ebf73380ca50e2a33960e58064e/transformed/jetified-ui-text-1.4.0-alpha03/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
