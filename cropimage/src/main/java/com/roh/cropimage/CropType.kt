@@ -1,6 +1,6 @@
 package com.roh.cropimage
 
-public enum class CropType {
+enum class CropType {
     FREE_STYLE,
     SQUARE
 }

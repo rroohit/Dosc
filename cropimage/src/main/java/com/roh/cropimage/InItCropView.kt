@@ -1,7 +1,6 @@
 package com.roh.cropimage
 
 import android.graphics.Bitmap
-import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.runtime.Composable
